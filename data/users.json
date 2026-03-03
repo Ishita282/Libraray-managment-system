@@ -1,0 +1,38 @@
+{"users": [
+  {
+    "id": "1",
+    "fullname": "Niraj Mehra",
+    "email": "niraj@example.com",
+    "password": "hashed_password_123",
+    "role": "user",
+    "issuedBook": "2",
+    "issuedDate": "01/10/2025",
+    "returnDate": "01/02/2026",
+    "active": true,
+    "subscriptionType": "Basic" ,
+    "subscriptionDate": "01/02/2026"
+  },
+  {
+    "id": "2",
+    "fullname": "Rahul Verma",
+    "email": "rahul@example.com",
+    "password": "hashed_password_456",
+    "role": "admin",
+    "issuedBook": "3",
+    "issuedDate": "01/10/2025",
+    "returnDate": "01/02/2026",
+    "active": true,
+    "subscriptionType": "Standard",
+    "subscriptionDate": "06/02/2026"
+  },
+  {
+    "id": "3",
+    "fullname": "Anita Singh",
+    "email": "anita@example.com",
+    "password": "hashed_password_789",
+    "role": "user",
+    "active": false,
+    "subscriptionType": "Premium" ,
+    "subscriptionDate": "12/02/2026"
+  }
+]}
