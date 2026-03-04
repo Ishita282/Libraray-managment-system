@@ -1,18 +1,4 @@
-const express = require ("express");
-// const {books} = require("../data/books.json")
-// const {users} = require("../data/users.json")
-
-const {
-  getAllBooks,
-  createBook,
-  getBookByID,
-  updateBookByID,
-  deleteBookByID,
-  issuedBook
-} = require("../controllers/books.controller")
-
-const route = express();
-
+const { userModel, bookModel } = require("../model");
 
 /*
 Route: /books
@@ -22,14 +8,21 @@ Access: Public
 Parameter: id
 */
 
-// route.get("/", (req, res) => {
-//   res.status(200).json({
-//     success: true,
-//     data: books,
-//   });
-// });
+exports.getAllBooks = async (req, res) => {
+  const allBooks = await bookModel.find();
 
-route.get('/', getAllBooks)
+  if (books.length === 0) {
+    return res.status.json({
+      success: false,
+      message: "No books in the system"
+    });
+  }
+
+  res.status(200).json({
+    success: true,
+    data: books,
+  });
+};
 
 /*
 Route: /books
@@ -40,23 +33,9 @@ Parameter: id
 */
 
 // route.post("/", (req, res) => {
-//   const {
-//     id,
-//     title,
-//     author,
-//     year,
-//     genre,
-//     available
-//   } = req.body;
+//   const { id, title, author, year, genre, available } = req.body;
 
-//   if (
-//     !id ||
-//     !title ||
-//     !author ||
-//     !year ||
-//     !genre ||
-//     !available
-//   ) {
+//   if (!id || !title || !author || !year || !genre || !available) {
 //     res.status(400).json({
 //       success: false,
 //       message: "Please provide all the fields",
@@ -78,7 +57,7 @@ Parameter: id
 //     author,
 //     year,
 //     genre,
-//     available
+//     available,
 //   });
 
 //   res.status(201).json({
@@ -87,7 +66,9 @@ Parameter: id
 //   });
 // });
 
-route.post('/', createBook)
+exports.createBook = async (req, res) => {
+  
+};
 
 /*
 Route: /books/{id}
@@ -114,7 +95,9 @@ Parameter: id
 //   });
 // });
 
-route.get('/:id', getBookByID)
+exports.getBookByID = async (req, res) => {
+  
+};
 
 /*
 Route: /books/{id}
@@ -144,7 +127,7 @@ Parameter: id
 //     });
 //   }
 
-//     //Method-1
+//   //Method-1
 //   // Object.assign(book, data)
 
 //   // OR
@@ -167,7 +150,9 @@ Parameter: id
 //   });
 // });
 
-route.put('/:id', updateBookByID)
+exports.updateBookByID = async (req, res) => {
+  
+};
 
 /*
 Route: /books/{id}
@@ -190,16 +175,18 @@ Parameter: id
 //   }
 
 //   //if book is exist, then filter it out from the array
-//   const updatebook = books.filter((each) => each.id !== id)
+//   const updatebook = books.filter((each) => each.id !== id);
 
 //   res.status(200).json({
 //     success: true,
 //     message: "Book deleted successfully",
-//     data: updatebook
+//     data: updatebook,
 //   });
 // });
 
-route.delete('/:id', deleteBookByID)
+exports.deleteBookByID = async (req, res) => {
+  
+};
 
 /*
 Route: /books/issued/for-user
@@ -210,47 +197,37 @@ Parameter: None
 */
 
 // route.get("/issued/for-user", (req, res) => {
-    
-//     const issuedBookUsers = users.filter((each) => {
-//         if(each.issuedBook){
-//             return each;
-//         }
-//     })
-
-//     const issuedBooks = []
-
-//     issuedBookUsers.forEach((each) => {
-//         const book = books.find((book) => (book.id) === each.issuedBook);
-
-//         book.issuedBy = each.name;
-//         book.issuedDate = each.issuedDate;
-//         book.returnDate = each.returnDate;
-
-//         issuedBooks.push(book)
-//     })
-
-//     if(!issuedBooks === 0){
-//         return  res.status(404).json({
-//         success: false,
-//         message: "No book issued yet"
-//     })
+//   const issuedBookUsers = users.filter((each) => {
+//     if (each.issuedBook) {
+//       return each;
 //     }
-    
-//     res.status(200).json({
-//         success: true,
-//         data: issuedBooks
-//     })
-// })
+//   });
 
-route.get('/issued/for-user', issuedBook)
+//   const issuedBooks = [];
 
-/*
-Route: /books/issued/withFine
-Method: GET 
-Description: Get all the list of the issued books with fine amount in the system 
-Access: Public
-Parameter: 
-*/
+//   issuedBookUsers.forEach((each) => {
+//     const book = books.find((book) => book.id === each.issuedBook);
 
+//     book.issuedBy = each.name;
+//     book.issuedDate = each.issuedDate;
+//     book.returnDate = each.returnDate;
 
-module.exports = route;
+//     issuedBooks.push(book);
+//   });
+
+//   if (!issuedBooks === 0) {
+//     return res.status(404).json({
+//       success: false,
+//       message: "No book issued yet",
+//     });
+//   }
+
+//   res.status(200).json({
+//     success: true,
+//     data: issuedBooks,
+//   });
+// });
+
+exports.issuedBook = async (req, res) => {
+  
+};
