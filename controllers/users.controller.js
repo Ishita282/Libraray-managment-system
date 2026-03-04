@@ -1,16 +1,4 @@
-const express = require("express");
-// const { users } = require("../data/users.json");
-
-const {
-  getAllUsers,
-  getUsersByID,
-  createUser,
-  updateUser,
-  deleteUser,
-  getSubscriptionDetailsByID,
-} = require("../controllers/users.controller");
-
-const route = express();
+const { userModel, bookModel } = require("../model");
 
 /*
 Route: /users
@@ -27,7 +15,9 @@ Parameter: None
 //   });
 // });
 
-route.get("/", getAllUsers);
+exports.getAllUsers = async (req, res) => {
+  
+};
 
 /*
 Route: /users/{id}
@@ -54,7 +44,9 @@ Parameter: id
 //   });
 // });
 
-route.get("/:id", getUsersByID);
+exports.getUsersByID = async (req, res) => {
+  
+};
 
 /*
 Route: /users
@@ -127,7 +119,9 @@ Parameter: None
 //   });
 // });
 
-route.post("/", createUser);
+exports.createUser = async (req, res) => {
+  
+};
 
 /*
 Route: /users/{id}
@@ -180,7 +174,9 @@ Parameter: id
 //   });
 // });
 
-route.put("/:id", updateUser);
+exports.updateUser = async (req, res) => {
+  
+};
 
 /*
 Route: /users/{id}
@@ -212,7 +208,9 @@ Parameter: id
 //   });
 // });
 
-route.delete("/:id", deleteUser);
+exports.deleteUser = async (req, res) => {
+  
+};
 
 /*
 Route: /users/subscription-details/{id}
@@ -285,6 +283,6 @@ Parameter: id
 //   });
 // });
 
-route.get("/subscription-details/:id", getSubscriptionDetailsByID);
-
-module.exports = route;
+exports.getSubscriptionDetailsByID = async (req, res) => {
+  
+};
