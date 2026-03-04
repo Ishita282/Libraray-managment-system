@@ -5,7 +5,7 @@ class IssuedBook {
   year;
   genre;
   available;
-  issuedBy;
+  issuedBook;
   issuedDate;
   returnDate;
 
@@ -16,7 +16,7 @@ class IssuedBook {
     this.year = user.issuedBook.year;
     this.genre = user.issuedBook.genre;
     this.available = user.issuedBook.available;
-    this.issuedBy = user.issuedBy;
+    this.issuedBook = user.issuedBook;
     this.issuedDate = user.issuedDate;
     this.returnDate = user.returnDate;
   }
