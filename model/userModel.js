@@ -19,17 +19,17 @@ const userSchema = new Schema({
         type: String,
         required: true
     } ,
-    issuedBook: {
-         type: mongoose.Schema.Types.ObjectId,
+    issuedBook: [{
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Book",
         required: false
-    },
+    }],
     issuedDate: {
-        type: String,
+        type: Date,
         required: false
     } ,
     returnDate: {
-        type: String,
+        type: Date,
         required: false
     },
     active: {
