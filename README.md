@@ -61,3 +61,7 @@
     >> C: Controller (Brain/Logic of a route)
 
 ## DTO
+
+    >> D: Data
+    >> T: Transfer
+    >> O: Object
