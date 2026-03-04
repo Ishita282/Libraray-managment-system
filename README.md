@@ -48,6 +48,16 @@
 
 `npm init`
 /
-`npm i`
+`npm i express mongoose mongodb`
+/
+`npm i nodemon --save-dev`
 /
 `npm run dev`
+
+## MVC Architechture (db)
+
+    >> M: Model (Structure of our Mongodb)
+    >> V: View (Frontend)
+    >> C: Controller (Brain/Logic of a route)
+
+## 
