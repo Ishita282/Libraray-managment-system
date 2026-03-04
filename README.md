@@ -48,7 +48,7 @@
 
 `npm init`
 /
-`npm i express mongoose mongodb`
+`npm i express mongoose mongodb dotenv`
 /
 `npm i nodemon --save-dev`
 /
@@ -60,4 +60,4 @@
     >> V: View (Frontend)
     >> C: Controller (Brain/Logic of a route)
 
-## 
+## DTO
