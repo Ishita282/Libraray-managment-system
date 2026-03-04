@@ -1,4 +1,4 @@
-const { userModel, bookModel } = require("../model");
+const { userModel, bookModel } = require("../model/export");
 const issuedBook = require("../dtos/book-dto");
 
 // Description: Get all the list of the books in the system
@@ -139,8 +139,8 @@ exports.deleteBookByID = async (req, res) => {
 
 // Description: Get all the list of the issued books in the system
 
-exports.issuedBook = async (req, res) => {
-  const users = userModel
+exports.bookIssued = async (req, res) => {
+  const users = await userModel
     .find({
       issuedBook: { $exists: true },
     })
@@ -150,7 +150,7 @@ exports.issuedBook = async (req, res) => {
     return new IssuedBook(each);
   });
 
-  if (!issuedBooks.length === 0) {
+  if (!issuedBooks.length) {
     return res.status(404).json({
       success: false,
       message: "No book issued yet",

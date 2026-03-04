@@ -8,7 +8,7 @@ const {
   getBookByID,
   updateBookByID,
   deleteBookByID,
-  issuedBook
+  bookIssued
 } = require("../controllers/books.controller")
 
 const route = express();
@@ -222,7 +222,7 @@ Parameter: None
 //     issuedBookUsers.forEach((each) => {
 //         const book = books.find((book) => (book.id) === each.issuedBook);
 
-//         book.issuedBy = each.name;
+//         book.issuedBook = each.name;
 //         book.issuedDate = each.issuedDate;
 //         book.returnDate = each.returnDate;
 
@@ -242,7 +242,7 @@ Parameter: None
 //     })
 // })
 
-route.get('/issued/for-user', issuedBook)
+route.get('/issued/for-user', bookIssued)
 
 /*
 Route: /books/issued/withFine
