@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const userRoute = require("./routes/userRoute");
 const bookRoute = require("./routes/bookRoute");
 const dbConnection = require("./db/db");
-const {userModel, bookModel} = require("./model")
+const {userModel, bookModel} = require("./model/export")
 
 dotenv.config();
 
